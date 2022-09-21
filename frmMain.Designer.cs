@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mrcTipo = new System.Windows.Forms.GroupBox();
             this.lblTipos = new System.Windows.Forms.Label();
             this.lblPersonas = new System.Windows.Forms.Label();
@@ -295,8 +296,10 @@
             this.Controls.Add(this.mrcPagos);
             this.Controls.Add(this.mrcAdicionales);
             this.Controls.Add(this.mrcTipo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
-            this.Text = "Formulario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Reserva de Cabanias";
             this.mrcTipo.ResumeLayout(false);
             this.mrcTipo.PerformLayout();
             this.mrcAdicionales.ResumeLayout(false);
