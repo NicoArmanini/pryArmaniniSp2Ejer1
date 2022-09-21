@@ -24,7 +24,7 @@ namespace pryArmaniniSp2Ejer1
 
         private void cmbTipos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTipos.Text != "")
+            if (cmbTipos.SelectedIndex != -1) //es lo mismo que (.Text != "") este hace que si no hay nada no se habilite -1 es que no esta seleccionado
             {
                 cmbPersonas.Enabled = true;
             }
