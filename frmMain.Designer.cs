@@ -136,12 +136,14 @@
             this.txtDias.Name = "txtDias";
             this.txtDias.Size = new System.Drawing.Size(90, 20);
             this.txtDias.TabIndex = 4;
+            this.txtDias.TextChanged += new System.EventHandler(this.txtDias_TextChanged);
             // 
             // mrcAdicionales
             // 
             this.mrcAdicionales.Controls.Add(this.chkTele);
             this.mrcAdicionales.Controls.Add(this.chkHeladera);
             this.mrcAdicionales.Controls.Add(this.chkCocina);
+            this.mrcAdicionales.Enabled = false;
             this.mrcAdicionales.Location = new System.Drawing.Point(27, 107);
             this.mrcAdicionales.Name = "mrcAdicionales";
             this.mrcAdicionales.Size = new System.Drawing.Size(160, 118);
@@ -155,6 +157,7 @@
             this.mrcPagos.Controls.Add(this.optEfectivo);
             this.mrcPagos.Controls.Add(this.cmbTarjetas);
             this.mrcPagos.Controls.Add(this.lblTarjetas);
+            this.mrcPagos.Enabled = false;
             this.mrcPagos.Location = new System.Drawing.Point(208, 107);
             this.mrcPagos.Name = "mrcPagos";
             this.mrcPagos.Size = new System.Drawing.Size(370, 118);
@@ -168,6 +171,7 @@
             this.mrcTitular.Controls.Add(this.txtNombre);
             this.mrcTitular.Controls.Add(this.lblTelefono);
             this.mrcTitular.Controls.Add(this.lblNombre);
+            this.mrcTitular.Enabled = false;
             this.mrcTitular.Location = new System.Drawing.Point(27, 231);
             this.mrcTitular.Name = "mrcTitular";
             this.mrcTitular.Size = new System.Drawing.Size(551, 118);
@@ -224,6 +228,7 @@
             this.optEfectivo.TabStop = true;
             this.optEfectivo.Text = "Efectivo";
             this.optEfectivo.UseVisualStyleBackColor = true;
+            this.optEfectivo.CheckedChanged += new System.EventHandler(this.optEfectivo_CheckedChanged);
             // 
             // optTarjeta
             // 
@@ -235,6 +240,7 @@
             this.optTarjeta.TabStop = true;
             this.optTarjeta.Text = "Tarjeta";
             this.optTarjeta.UseVisualStyleBackColor = true;
+            this.optTarjeta.CheckedChanged += new System.EventHandler(this.optTarjeta_CheckedChanged);
             // 
             // lblTarjetas
             // 

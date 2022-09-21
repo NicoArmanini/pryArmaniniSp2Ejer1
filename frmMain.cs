@@ -45,5 +45,43 @@ namespace pryArmaniniSp2Ejer1
                 txtDias.Enabled = false;
             }
         }
+
+        private void txtDias_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDias.Text != "")
+            {
+                mrcAdicionales.Enabled = true;
+                mrcPagos.Enabled = true;
+            }
+            else
+            {
+                mrcAdicionales.Enabled = false;
+                mrcPagos.Enabled = false;
+            }
+        }
+
+        private void optEfectivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (optEfectivo.Checked == true)
+            {
+                cmbTarjetas.Enabled = false;
+            }
+            else
+            {
+                cmbTarjetas.Enabled = true;
+            }
+        }
+
+        private void optTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if(optTarjeta.Checked == true)
+            {
+                optEfectivo.Enabled = false;
+            }
+            else
+            {
+                optEfectivo.Enabled = true;
+            }
+        }
     }
 }
