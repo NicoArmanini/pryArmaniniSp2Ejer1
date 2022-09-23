@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mrcTipo = new System.Windows.Forms.GroupBox();
-            this.lblTipos = new System.Windows.Forms.Label();
-            this.lblPersonas = new System.Windows.Forms.Label();
-            this.lblDias = new System.Windows.Forms.Label();
-            this.cmbTipos = new System.Windows.Forms.ComboBox();
-            this.cmbPersonas = new System.Windows.Forms.ComboBox();
             this.txtDias = new System.Windows.Forms.TextBox();
+            this.cmbPersonas = new System.Windows.Forms.ComboBox();
+            this.cmbTipos = new System.Windows.Forms.ComboBox();
+            this.lblDias = new System.Windows.Forms.Label();
+            this.lblPersonas = new System.Windows.Forms.Label();
+            this.lblTipos = new System.Windows.Forms.Label();
             this.mrcAdicionales = new System.Windows.Forms.GroupBox();
-            this.mrcPagos = new System.Windows.Forms.GroupBox();
-            this.mrcTitular = new System.Windows.Forms.GroupBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.chkCocina = new System.Windows.Forms.CheckBox();
-            this.chkHeladera = new System.Windows.Forms.CheckBox();
             this.chkTele = new System.Windows.Forms.CheckBox();
-            this.optEfectivo = new System.Windows.Forms.RadioButton();
+            this.chkHeladera = new System.Windows.Forms.CheckBox();
+            this.chkCocina = new System.Windows.Forms.CheckBox();
+            this.mrcPagos = new System.Windows.Forms.GroupBox();
             this.optTarjeta = new System.Windows.Forms.RadioButton();
-            this.lblTarjetas = new System.Windows.Forms.Label();
+            this.optEfectivo = new System.Windows.Forms.RadioButton();
             this.cmbTarjetas = new System.Windows.Forms.ComboBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblTarjetas = new System.Windows.Forms.Label();
+            this.mrcTitular = new System.Windows.Forms.GroupBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.mrcTipo.SuspendLayout();
             this.mrcAdicionales.SuspendLayout();
             this.mrcPagos.SuspendLayout();
@@ -72,33 +72,32 @@
             this.mrcTipo.TabStop = false;
             this.mrcTipo.Text = "Tipo de Cabania";
             // 
-            // lblTipos
+            // txtDias
             // 
-            this.lblTipos.AutoSize = true;
-            this.lblTipos.Location = new System.Drawing.Point(27, 32);
-            this.lblTipos.Name = "lblTipos";
-            this.lblTipos.Size = new System.Drawing.Size(33, 13);
-            this.lblTipos.TabIndex = 0;
-            this.lblTipos.Text = "Tipos";
-            this.lblTipos.Click += new System.EventHandler(this.label1_Click);
+            this.txtDias.Enabled = false;
+            this.txtDias.Location = new System.Drawing.Point(390, 32);
+            this.txtDias.Name = "txtDias";
+            this.txtDias.Size = new System.Drawing.Size(90, 20);
+            this.txtDias.TabIndex = 4;
+            this.txtDias.TextChanged += new System.EventHandler(this.txtDias_TextChanged);
             // 
-            // lblPersonas
+            // cmbPersonas
             // 
-            this.lblPersonas.AutoSize = true;
-            this.lblPersonas.Location = new System.Drawing.Point(175, 35);
-            this.lblPersonas.Name = "lblPersonas";
-            this.lblPersonas.Size = new System.Drawing.Size(51, 13);
-            this.lblPersonas.TabIndex = 1;
-            this.lblPersonas.Text = "Personas";
-            // 
-            // lblDias
-            // 
-            this.lblDias.AutoSize = true;
-            this.lblDias.Location = new System.Drawing.Point(356, 35);
-            this.lblDias.Name = "lblDias";
-            this.lblDias.Size = new System.Drawing.Size(28, 13);
-            this.lblDias.TabIndex = 2;
-            this.lblDias.Text = "Dias";
+            this.cmbPersonas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPersonas.Enabled = false;
+            this.cmbPersonas.FormattingEnabled = true;
+            this.cmbPersonas.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cmbPersonas.Location = new System.Drawing.Point(232, 32);
+            this.cmbPersonas.Name = "cmbPersonas";
+            this.cmbPersonas.Size = new System.Drawing.Size(76, 21);
+            this.cmbPersonas.TabIndex = 3;
+            this.cmbPersonas.SelectedIndexChanged += new System.EventHandler(this.cmbPersonas_SelectedIndexChanged);
             // 
             // cmbTipos
             // 
@@ -113,30 +112,33 @@
             this.cmbTipos.TabIndex = 3;
             this.cmbTipos.SelectedIndexChanged += new System.EventHandler(this.cmbTipos_SelectedIndexChanged);
             // 
-            // cmbPersonas
+            // lblDias
             // 
-            this.cmbPersonas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPersonas.Enabled = false;
-            this.cmbPersonas.FormattingEnabled = true;
-            this.cmbPersonas.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cmbPersonas.Location = new System.Drawing.Point(232, 32);
-            this.cmbPersonas.Name = "cmbPersonas";
-            this.cmbPersonas.Size = new System.Drawing.Size(76, 21);
-            this.cmbPersonas.TabIndex = 3;
-            this.cmbPersonas.SelectedIndexChanged += new System.EventHandler(this.cmbPersonas_SelectedIndexChanged);
+            this.lblDias.AutoSize = true;
+            this.lblDias.Location = new System.Drawing.Point(356, 35);
+            this.lblDias.Name = "lblDias";
+            this.lblDias.Size = new System.Drawing.Size(28, 13);
+            this.lblDias.TabIndex = 2;
+            this.lblDias.Text = "Dias";
             // 
-            // txtDias
+            // lblPersonas
             // 
-            this.txtDias.Enabled = false;
-            this.txtDias.Location = new System.Drawing.Point(390, 32);
-            this.txtDias.Name = "txtDias";
-            this.txtDias.Size = new System.Drawing.Size(90, 20);
-            this.txtDias.TabIndex = 4;
-            this.txtDias.TextChanged += new System.EventHandler(this.txtDias_TextChanged);
+            this.lblPersonas.AutoSize = true;
+            this.lblPersonas.Location = new System.Drawing.Point(175, 35);
+            this.lblPersonas.Name = "lblPersonas";
+            this.lblPersonas.Size = new System.Drawing.Size(51, 13);
+            this.lblPersonas.TabIndex = 1;
+            this.lblPersonas.Text = "Personas";
+            // 
+            // lblTipos
+            // 
+            this.lblTipos.AutoSize = true;
+            this.lblTipos.Location = new System.Drawing.Point(27, 32);
+            this.lblTipos.Name = "lblTipos";
+            this.lblTipos.Size = new System.Drawing.Size(33, 13);
+            this.lblTipos.TabIndex = 0;
+            this.lblTipos.Text = "Tipos";
+            this.lblTipos.Click += new System.EventHandler(this.label1_Click);
             // 
             // mrcAdicionales
             // 
@@ -150,6 +152,36 @@
             this.mrcAdicionales.TabIndex = 1;
             this.mrcAdicionales.TabStop = false;
             this.mrcAdicionales.Text = "Adicionales";
+            // 
+            // chkTele
+            // 
+            this.chkTele.AutoSize = true;
+            this.chkTele.Location = new System.Drawing.Point(33, 74);
+            this.chkTele.Name = "chkTele";
+            this.chkTele.Size = new System.Drawing.Size(74, 17);
+            this.chkTele.TabIndex = 0;
+            this.chkTele.Text = "Television";
+            this.chkTele.UseVisualStyleBackColor = true;
+            // 
+            // chkHeladera
+            // 
+            this.chkHeladera.AutoSize = true;
+            this.chkHeladera.Location = new System.Drawing.Point(33, 51);
+            this.chkHeladera.Name = "chkHeladera";
+            this.chkHeladera.Size = new System.Drawing.Size(69, 17);
+            this.chkHeladera.TabIndex = 0;
+            this.chkHeladera.Text = "Heladera";
+            this.chkHeladera.UseVisualStyleBackColor = true;
+            // 
+            // chkCocina
+            // 
+            this.chkCocina.AutoSize = true;
+            this.chkCocina.Location = new System.Drawing.Point(33, 28);
+            this.chkCocina.Name = "chkCocina";
+            this.chkCocina.Size = new System.Drawing.Size(59, 17);
+            this.chkCocina.TabIndex = 0;
+            this.chkCocina.Text = "Cocina";
+            this.chkCocina.UseVisualStyleBackColor = true;
             // 
             // mrcPagos
             // 
@@ -165,6 +197,55 @@
             this.mrcPagos.TabStop = false;
             this.mrcPagos.Text = "Forma de Pago";
             // 
+            // optTarjeta
+            // 
+            this.optTarjeta.AutoSize = true;
+            this.optTarjeta.Location = new System.Drawing.Point(165, 35);
+            this.optTarjeta.Name = "optTarjeta";
+            this.optTarjeta.Size = new System.Drawing.Size(58, 17);
+            this.optTarjeta.TabIndex = 0;
+            this.optTarjeta.TabStop = true;
+            this.optTarjeta.Text = "Tarjeta";
+            this.optTarjeta.UseVisualStyleBackColor = true;
+            this.optTarjeta.CheckedChanged += new System.EventHandler(this.optTarjeta_CheckedChanged);
+            // 
+            // optEfectivo
+            // 
+            this.optEfectivo.AutoSize = true;
+            this.optEfectivo.Location = new System.Drawing.Point(35, 35);
+            this.optEfectivo.Name = "optEfectivo";
+            this.optEfectivo.Size = new System.Drawing.Size(64, 17);
+            this.optEfectivo.TabIndex = 0;
+            this.optEfectivo.TabStop = true;
+            this.optEfectivo.Text = "Efectivo";
+            this.optEfectivo.UseVisualStyleBackColor = true;
+            this.optEfectivo.CheckedChanged += new System.EventHandler(this.optEfectivo_CheckedChanged);
+            // 
+            // cmbTarjetas
+            // 
+            this.cmbTarjetas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTarjetas.FormattingEnabled = true;
+            this.cmbTarjetas.Items.AddRange(new object[] {
+            "Master\t",
+            "Visa",
+            "Macro",
+            "Santander"});
+            this.cmbTarjetas.Location = new System.Drawing.Point(35, 90);
+            this.cmbTarjetas.Name = "cmbTarjetas";
+            this.cmbTarjetas.Size = new System.Drawing.Size(267, 21);
+            this.cmbTarjetas.TabIndex = 3;
+            this.cmbTarjetas.SelectedIndexChanged += new System.EventHandler(this.cmbTarjetas_SelectedIndexChanged);
+            // 
+            // lblTarjetas
+            // 
+            this.lblTarjetas.AutoSize = true;
+            this.lblTarjetas.Location = new System.Drawing.Point(32, 74);
+            this.lblTarjetas.Name = "lblTarjetas";
+            this.lblTarjetas.Size = new System.Drawing.Size(45, 13);
+            this.lblTarjetas.TabIndex = 0;
+            this.lblTarjetas.Text = "Tarjetas";
+            this.lblTarjetas.Click += new System.EventHandler(this.label1_Click);
+            // 
             // mrcTitular
             // 
             this.mrcTitular.Controls.Add(this.txtTelefono);
@@ -179,95 +260,19 @@
             this.mrcTitular.TabStop = false;
             this.mrcTitular.Text = "Titular de la Reserva";
             // 
-            // btnAceptar
+            // txtTelefono
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(504, 359);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(87, 26);
-            this.btnAceptar.TabIndex = 2;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.txtTelefono.Location = new System.Drawing.Point(107, 66);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(407, 20);
+            this.txtTelefono.TabIndex = 4;
             // 
-            // chkCocina
+            // txtNombre
             // 
-            this.chkCocina.AutoSize = true;
-            this.chkCocina.Location = new System.Drawing.Point(33, 28);
-            this.chkCocina.Name = "chkCocina";
-            this.chkCocina.Size = new System.Drawing.Size(59, 17);
-            this.chkCocina.TabIndex = 0;
-            this.chkCocina.Text = "Cocina";
-            this.chkCocina.UseVisualStyleBackColor = true;
-            // 
-            // chkHeladera
-            // 
-            this.chkHeladera.AutoSize = true;
-            this.chkHeladera.Location = new System.Drawing.Point(33, 51);
-            this.chkHeladera.Name = "chkHeladera";
-            this.chkHeladera.Size = new System.Drawing.Size(69, 17);
-            this.chkHeladera.TabIndex = 0;
-            this.chkHeladera.Text = "Heladera";
-            this.chkHeladera.UseVisualStyleBackColor = true;
-            // 
-            // chkTele
-            // 
-            this.chkTele.AutoSize = true;
-            this.chkTele.Location = new System.Drawing.Point(33, 74);
-            this.chkTele.Name = "chkTele";
-            this.chkTele.Size = new System.Drawing.Size(74, 17);
-            this.chkTele.TabIndex = 0;
-            this.chkTele.Text = "Television";
-            this.chkTele.UseVisualStyleBackColor = true;
-            // 
-            // optEfectivo
-            // 
-            this.optEfectivo.AutoSize = true;
-            this.optEfectivo.Location = new System.Drawing.Point(35, 35);
-            this.optEfectivo.Name = "optEfectivo";
-            this.optEfectivo.Size = new System.Drawing.Size(64, 17);
-            this.optEfectivo.TabIndex = 0;
-            this.optEfectivo.TabStop = true;
-            this.optEfectivo.Text = "Efectivo";
-            this.optEfectivo.UseVisualStyleBackColor = true;
-            this.optEfectivo.CheckedChanged += new System.EventHandler(this.optEfectivo_CheckedChanged);
-            // 
-            // optTarjeta
-            // 
-            this.optTarjeta.AutoSize = true;
-            this.optTarjeta.Location = new System.Drawing.Point(165, 35);
-            this.optTarjeta.Name = "optTarjeta";
-            this.optTarjeta.Size = new System.Drawing.Size(58, 17);
-            this.optTarjeta.TabIndex = 0;
-            this.optTarjeta.TabStop = true;
-            this.optTarjeta.Text = "Tarjeta";
-            this.optTarjeta.UseVisualStyleBackColor = true;
-            this.optTarjeta.CheckedChanged += new System.EventHandler(this.optTarjeta_CheckedChanged);
-            // 
-            // lblTarjetas
-            // 
-            this.lblTarjetas.AutoSize = true;
-            this.lblTarjetas.Location = new System.Drawing.Point(32, 74);
-            this.lblTarjetas.Name = "lblTarjetas";
-            this.lblTarjetas.Size = new System.Drawing.Size(45, 13);
-            this.lblTarjetas.TabIndex = 0;
-            this.lblTarjetas.Text = "Tarjetas";
-            this.lblTarjetas.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cmbTarjetas
-            // 
-            this.cmbTarjetas.FormattingEnabled = true;
-            this.cmbTarjetas.Location = new System.Drawing.Point(35, 90);
-            this.cmbTarjetas.Name = "cmbTarjetas";
-            this.cmbTarjetas.Size = new System.Drawing.Size(267, 21);
-            this.cmbTarjetas.TabIndex = 3;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(30, 38);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre";
+            this.txtNombre.Location = new System.Drawing.Point(107, 35);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(407, 20);
+            this.txtNombre.TabIndex = 4;
             // 
             // lblTelefono
             // 
@@ -278,19 +283,23 @@
             this.lblTelefono.TabIndex = 1;
             this.lblTelefono.Text = "Telefonos";
             // 
-            // txtNombre
+            // lblNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(107, 35);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(407, 20);
-            this.txtNombre.TabIndex = 4;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(30, 38);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre";
             // 
-            // txtTelefono
+            // btnAceptar
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(107, 66);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(407, 20);
-            this.txtTelefono.TabIndex = 4;
+            this.btnAceptar.Location = new System.Drawing.Point(504, 359);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(87, 26);
+            this.btnAceptar.TabIndex = 2;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 

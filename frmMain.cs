@@ -70,17 +70,38 @@ namespace pryArmaniniSp2Ejer1
             {
                 cmbTarjetas.Enabled = true;
             }
+            if (optEfectivo.Checked == true)
+            {
+                mrcTitular.Enabled = true;
+            }
+            else
+            {
+                 mrcTitular.Enabled= false;
+            }
         }
 
         private void optTarjeta_CheckedChanged(object sender, EventArgs e)
         {
             if(optTarjeta.Checked == true)
             {
-                optEfectivo.Enabled = false;
+                cmbTarjetas.Enabled = true;
             }
             else
             {
-                optEfectivo.Enabled = true;
+                cmbTarjetas.Enabled = false;
+            }
+        }
+
+        private void cmbTarjetas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTarjetas.Text != "")
+            {
+                mrcTitular.Enabled = true;
+
+            }
+            else
+            {
+                mrcTitular.Enabled = false;
             }
         }
     }
