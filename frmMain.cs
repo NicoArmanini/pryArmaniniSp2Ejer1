@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Librerias predeterminadas
+
 namespace pryArmaniniSp2Ejer1
 {
     public partial class frmMain : Form
 
     {
+         //Float: flotante
+         // Constantes de los calculos
          private const float TIPOA = 20;
          public const float TIPOB = 34;
          const float COCINA = 1;
@@ -24,7 +28,7 @@ namespace pryArmaniniSp2Ejer1
         {
             InitializeComponent();
         }
-
+        //private de privado, void de vacio, se carga este formulario (se determinan los parametros)
         private void frmMain_Load(object sender, EventArgs e)
         {
             
@@ -35,10 +39,6 @@ namespace pryArmaniniSp2Ejer1
             cmbTipos.SelectedIndex = 0;
             
             txtDias.Text = "";
-            
-            chkCocina.Checked = false;
-            chkHeladera.Checked = false;
-            chkTele.Checked = false;
             
             optEfectivo.Checked = true;
             txtNombre.Text = "";
@@ -67,18 +67,19 @@ namespace pryArmaniniSp2Ejer1
             //    cmbPersonas.Enabled = false;
             //}
 
-            int I = 0;
+            int I = 0; //Int 
             
             cmbPersonas.Items.Clear();
             
-            if (cmbTipos.SelectedIndex == 0) 
+            if (cmbTipos.SelectedIndex == 0) //O puede ser cmbTipos.SelectedItem == "Tipo A"
             {
                 for (I = 1; I <= 4; I++)
                 {
                     cmbPersonas.Items.Add(I);
                 }
             }
-            else
+            else //al ya declarar que si es tipo a cargue de 1 a 4
+                 //con el else nos referimos al Tipo B
             { 
                 for (I = 1; I <= 8; I++)
                 {
@@ -86,7 +87,7 @@ namespace pryArmaniniSp2Ejer1
                 }
             }
 
-            cmbPersonas.SelectedIndex = 0;
+            cmbPersonas.SelectedIndex = 0; //Selecciona el Item 0 del combo
             
         }
 
@@ -118,6 +119,15 @@ namespace pryArmaniniSp2Ejer1
                 mrcPagos.Enabled = false;
             }
 
+            //declaro la condicion para activar btnAceptar
+            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" && txtTelefono.Text != "")
+            {
+                btnAceptar.Enabled = true;
+            }
+            else
+            {
+                btnAceptar.Enabled = false;
+            }
         }
 
         private void optEfectivo_CheckedChanged(object sender, EventArgs e)
@@ -181,12 +191,32 @@ namespace pryArmaniniSp2Ejer1
                 txtTelefono.Enabled = false;
             }
 
+            //declaro la condicion para activar btnAceptar
+            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" && txtTelefono.Text != "")
+            {
+                btnAceptar.Enabled = true;
+            }
+            else
+            {
+                btnAceptar.Enabled = false;
+            }
+
         }
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
 
             if (txtTelefono.Text != "")
+            {
+                btnAceptar.Enabled = true;
+            }
+            else
+            {
+                btnAceptar.Enabled = false;
+            }
+
+            //declaro la condicion para activar btnAceptar
+            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" && txtTelefono.Text != "")
             {
                 btnAceptar.Enabled = true;
             }
@@ -204,8 +234,9 @@ namespace pryArmaniniSp2Ejer1
             int Dias;
             float Total;
 
-            Dias = int.Parse(txtDias.Text);
+            Dias = int.Parse(txtDias.Text); //cant. dias ingresados / Int Enteros
 
+            //determina el tipo de cabaña para el precio base
             if (cmbTipos.SelectedIndex == 0)
             {
                 PrecioBase = TIPOA;
@@ -215,8 +246,10 @@ namespace pryArmaniniSp2Ejer1
                 PrecioBase = TIPOB;
             }
             
+            //precio base + importe x persona (1usd)
             PrecioBase = PrecioBase + (PORPERSONA * int.Parse(cmbPersonas.Text));
-           
+
+            //controla adicionales           
             Opcionales = 0;
             if (chkCocina.Checked == true)
             {
@@ -231,8 +264,10 @@ namespace pryArmaniniSp2Ejer1
                 Opcionales = Opcionales + TELEVISOR;
             }
             
+            //saca el total por cant. de dias
             Total = (PrecioBase + Opcionales) * Dias;
     
+            //controla forma pago
             if (optTarjeta.Checked == true)
             {
                 if (cmbTarjetas.SelectedIndex == 0)
@@ -246,11 +281,15 @@ namespace pryArmaniniSp2Ejer1
                 Total = Total + Recargo;
             }
             
+            //mensaje para el resultado
+
             MessageBox.Show("Total = " + Total.ToString(), "Importe de la reserva",
             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            //reinicia los controles
+
             cmbTipos.SelectedIndex = 0;
-            txtDias.Text = "1";
+            txtDias.Text = "";
             chkCocina.Checked = false;
             chkHeladera.Checked = false;
             chkTele.Checked = false;
@@ -258,8 +297,11 @@ namespace pryArmaniniSp2Ejer1
             txtNombre.Text = "";
             txtTelefono.Text = "";
 
+            
         }
 
+        //hace que en el txt solo se puedan escribir numeros
+        //KeyPress es un evento, !Char unico caracter
         private void txtDias_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
