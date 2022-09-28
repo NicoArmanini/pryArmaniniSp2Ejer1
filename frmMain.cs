@@ -125,17 +125,6 @@ namespace pryArmaniniSp2Ejer1
             }
 
 
-            //if (txtDias.Text != "" && txtDias.Text != "0" &&
-            //txtNombre.Text != "" && txtTelefono.Text != "")
-            //{
-            //    btnAceptar.Enabled = true;
-            //}
-            //else
-            //{
-            //    btnAceptar.Enabled = false;
-            //}
-
-
         }
 
         private void optEfectivo_CheckedChanged(object sender, EventArgs e)
@@ -263,6 +252,15 @@ namespace pryArmaniniSp2Ejer1
             
             MessageBox.Show("Total = " + Total.ToString(), "Importe de la reserva",
             MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cmbTipos.SelectedIndex = 0;
+            txtDias.Text = "1";
+            chkCocina.Checked = false;
+            chkHeladera.Checked = false;
+            chkTele.Checked = false;
+            optEfectivo.Checked = true;
+            txtNombre.Text = "";
+            txtTelefono.Text = "";
 
         }
 
