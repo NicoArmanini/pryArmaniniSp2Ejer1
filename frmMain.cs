@@ -15,12 +15,12 @@ namespace pryArmaniniSp2Ejer1
     {
 
         // constantes para los cálculos
- private const float TIPOA = 20;
- public const float TIPOB = 34;
- const float COCINA = 1;
- const float HELADERA = 1.5f;
- const float TELEVISOR = 2;
- const float PORPERSONA = 1;
+         private const float TIPOA = 20;
+         public const float TIPOB = 34;
+         const float COCINA = 1;
+         const float HELADERA = 1.5f;
+         const float TELEVISOR = 2;
+         const float PORPERSONA = 1;
 
         public frmMain()
         {
@@ -50,10 +50,6 @@ namespace pryArmaniniSp2Ejer1
             cmbTarjetas.Items.Add("Card Red");
             cmbTarjetas.Items.Add("Card Green");
             cmbTarjetas.Items.Add("Card Blue");
-            
-            btnAceptar.Enabled = false;
-
-
 
         }
 
@@ -124,7 +120,6 @@ namespace pryArmaniniSp2Ejer1
                 mrcPagos.Enabled = false;
             }
 
-
         }
 
         private void optEfectivo_CheckedChanged(object sender, EventArgs e)
@@ -163,6 +158,7 @@ namespace pryArmaniniSp2Ejer1
 
         private void cmbTarjetas_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (cmbTarjetas.Text != "")
             {
                 mrcTitular.Enabled = true;
@@ -177,6 +173,7 @@ namespace pryArmaniniSp2Ejer1
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
+
             if (txtNombre.Text != "")
             {
                 txtTelefono.Enabled = true;
@@ -190,6 +187,7 @@ namespace pryArmaniniSp2Ejer1
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
+
             if (txtTelefono.Text != "")
             {
                 btnAceptar.Enabled = true;
