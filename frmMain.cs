@@ -13,8 +13,6 @@ namespace pryArmaniniSp2Ejer1
     public partial class frmMain : Form
 
     {
-
-        // constantes para los cálculos
          private const float TIPOA = 20;
          public const float TIPOB = 34;
          const float COCINA = 1;
