@@ -28,15 +28,18 @@ namespace pryArmaniniSp2Ejer1
         {
             InitializeComponent();
         }
-        //private de privado, void de vacio, se carga este formulario (se determinan los parametros)
+        //private de privado, void de vacio, se carga este formulario
+        //(se determinan los parametros)
         private void frmMain_Load(object sender, EventArgs e)
         {
             
             cmbTipos.Items.Clear();
             cmbTipos.Items.Add("Tipo A");
             cmbTipos.Items.Add("Tipo B");
-            
-            cmbTipos.SelectedIndex = 0;
+
+            //dispara SelecIndexChanged 
+
+            cmbTipos.SelectedIndex = 0; 
             
             txtDias.Text = "";
             
@@ -58,7 +61,8 @@ namespace pryArmaniniSp2Ejer1
 
         private void cmbTipos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (cmbTipos.SelectedIndex != -1) //es lo mismo que (.Text != "") este hace que si no hay nada no se habilite -1 es que no esta seleccionado
+            //if (cmbTipos.SelectedIndex != -1) //es lo mismo que (.Text != "")
+            //este hace que si no hay nada no se habilite -1 es que no esta seleccionado
             //{
             //    cmbPersonas.Enabled = true;
             //}
@@ -120,7 +124,8 @@ namespace pryArmaniniSp2Ejer1
             }
 
             //declaro la condicion para activar btnAceptar
-            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" && txtTelefono.Text != "")
+            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" 
+                && txtTelefono.Text != "")
             {
                 btnAceptar.Enabled = true;
             }
@@ -192,7 +197,8 @@ namespace pryArmaniniSp2Ejer1
             }
 
             //declaro la condicion para activar btnAceptar
-            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" && txtTelefono.Text != "")
+            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != ""
+                && txtTelefono.Text != "")
             {
                 btnAceptar.Enabled = true;
             }
@@ -216,7 +222,8 @@ namespace pryArmaniniSp2Ejer1
             }
 
             //declaro la condicion para activar btnAceptar
-            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" && txtTelefono.Text != "")
+            if (txtDias.Text != "" && txtDias.Text != "0" && txtNombre.Text != "" 
+                && txtTelefono.Text != "")
             {
                 btnAceptar.Enabled = true;
             }
@@ -310,6 +317,7 @@ namespace pryArmaniniSp2Ejer1
                 e.Handled = true;
             }
         }
+        
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -318,6 +326,7 @@ namespace pryArmaniniSp2Ejer1
                 (e.KeyChar != '.'))
             {
                 e.Handled = true;
+                
             }
         }
     }
